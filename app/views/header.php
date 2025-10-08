@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Whatever Database</title>
         <link rel="stylesheet" type="text/css"
-            href="/Unit 2 Group Project/main.css">
+            href="../main.css">
             <!-- css not hooked up anywhere right now -->
 
             <!-- we should add in a navigationg bar in this header
