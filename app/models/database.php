@@ -12,5 +12,3 @@
         exit();
     }
 ?>
-
-<!-- we will have to change username and password here, its blank right now-->

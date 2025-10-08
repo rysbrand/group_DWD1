@@ -1,3 +1,4 @@
+<!-- Column names for Genres table are: Name, Description, genre_ID -->
 <?php
 function get_genres() {
     global $db;

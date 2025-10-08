@@ -1,4 +1,5 @@
 <!-- functions go here!! -->
+ <!-- Column names for the movies table are: Title, genre_ID, Description, release_Year, movie_ID, Price-->
 <?php
 function get_movies_by_genre($genre_id) {
     global $db;
@@ -35,15 +36,16 @@ function delete_movie($movie_id) {
     $statement->closeCursor();
 }
 // Really need to double check this for all the correct columns and such
-function add_movie($genre_id, $name, $price, $description) {
+
+function add_movie($genre_id, $title, $price, $description) {
     global $db;
     $query = 'INSERT INTO movies
-                 (genre_ID, movie_name, movie_price, movie_description)
+                 (genre_ID, movie_title, movie_price, movie_description)
               VALUES
                  (:genre_id, :name, :price, :description)';
     $statement = $db->prepare($query);
     $statement->bindValue(':genre_id', $genre_id);
-    $statement->bindValue(':name', $name);
+    $statement->bindValue(':title', $title);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':description', $description);
     $statement->execute();
