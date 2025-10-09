@@ -1,4 +1,4 @@
-<?php include '../views/header.php'; ?>
+
 <main>
     <aside>
         <h1>Movie List</h1>
@@ -39,4 +39,4 @@
         <?php// endif; ?>-->
     </section>
 </main>
-<?php include '../views/footer.php'; ?>
+

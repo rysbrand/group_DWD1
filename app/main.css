@@ -1,0 +1,43 @@
+/* main.css */
+
+:root {
+  --bg: #0f0f10;
+  --panel: #1c1d20;
+  --border: #2a2b2f;
+  --text: #f2f2f2;
+  --muted: #9aa0a6;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+.nav-left, .nav-right { display: flex; gap: 14px; align-items: center; }
+.brand { font-weight: 700; letter-spacing: .3px; }
+.nav-link { padding: 6px 10px; border-radius: 8px; }
+.nav-link.active { background: var(--border); }
+
+/* PAGE CONTAINER */
+.container { max-width: 1024px; margin: 24px auto; padding: 0 16px; }
+
+/* FOOTER */
+.site-footer { text-align: center; padding: 24px 0; color: var(--muted); }
