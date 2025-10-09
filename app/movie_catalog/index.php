@@ -1,7 +1,7 @@
 <?php 
 require_once('../models/database.php');
-require('../model/genres_db.php');
-require('../model/movies_db.php');
+require('../models/genres_db.php');
+require('../models/movies_db.php');
 
 //include('../movie_catalog/movie_view.php');
 
