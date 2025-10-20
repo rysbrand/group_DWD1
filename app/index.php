@@ -18,6 +18,7 @@ $route = $_GET['r'] ?? 'home';
 include $ROOT . '/views/header.php';
 
 switch ($route) {
+  include $ROOT . '/movie_catalog/movie_view.php';
   case 'list':
     include $ROOT . '/movie_catalog/movie_list.php';
     break;
