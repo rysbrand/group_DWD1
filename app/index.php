@@ -30,6 +30,7 @@ switch ($route) {
   default:
     include $ROOT . '/movie_catalog/movie_view.php'; // ← home page
     break;
+    
 }
 
 include $ROOT . '/views/footer.php';

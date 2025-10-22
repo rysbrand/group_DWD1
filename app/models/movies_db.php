@@ -4,7 +4,7 @@
 function get_movies_by_genre($genre_id) {
     global $db;
     $query = 'SELECT * FROM movies
-              WHERE movies.genreID = :genre_id
+              WHERE movies.genre_ID = :genre_id
               ORDER BY movie_ID';
     $statement = $db->prepare($query);
     $statement->bindValue(":genre_id", $genre_id);
@@ -26,6 +26,38 @@ function get_movie($movie_id) {
     return $movie;
 }
 
+function add_movie($title, $genre_id, $description, $release_year, $price) {
+    global $db;
+    $query = 'INSERT INTO movies
+                 (Title, genre_ID, Description, release_Year, Price)
+              VALUES
+                 (:title, :genre_id, :description, :release_year, :price)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':title', $title);
+    $statement->bindValue(':genre_id', $genre_id);
+    $statement->bindValue(':description', $description);
+    $statement->bindValue(':release_year', $release_year);
+    $statement->bindValue(':price', $price);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function update_movie($movie_id, $title, $genre_id, $description, $release_year, $price) {
+    global $db;
+    $query = 'UPDATE movies
+              SET Title = :title, genre_ID = :genre_id, Description = :description, release_Year = :release_year, Price = :price
+              WHERE movie_ID = :movie_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':title', $title);
+    $statement->bindValue(':genre_id', $genre_id);
+    $statement->bindValue(':description', $description);
+    $statement->bindValue(':release_year', $release_year);
+    $statement->bindValue(':price', $price);
+    $statement->bindValue(':movie_id', $movie_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function delete_movie($movie_id) {
     global $db;
     $query = 'DELETE FROM movies
@@ -36,19 +68,4 @@ function delete_movie($movie_id) {
     $statement->closeCursor();
 }
 // Really need to double check this for all the correct columns and such
-
-function add_movie($genre_id, $title, $price, $description) {
-    global $db;
-    $query = 'INSERT INTO movies
-                 (genre_ID, movie_title, movie_price, movie_description)
-              VALUES
-                 (:genre_id, :name, :price, :description)';
-    $statement = $db->prepare($query);
-    $statement->bindValue(':genre_id', $genre_id);
-    $statement->bindValue(':title', $title);
-    $statement->bindValue(':price', $price);
-    $statement->bindValue(':description', $description);
-    $statement->execute();
-    $statement->closeCursor();
-}
 ?>

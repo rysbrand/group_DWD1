@@ -13,7 +13,7 @@ $BASE = $BASE === '/' ? '' : $BASE; // normalize
   <meta charset="utf-8" />
   <title><?= htmlspecialchars($page_title) ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../app/main.css">
+  <link rel="stylesheet" href="../main.css">
 </head>
 <body>
   <nav class="navbar">

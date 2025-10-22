@@ -4,19 +4,19 @@
         <h1>Movie List</h1>
         <nav>
             <ul>
-                <?php //foreach ($movies as $movie) : ?>
+                <?php foreach ($movies as $movie) : ?>
                 <li>
-                    <!--<a href="?movie_id=<?php// echo $movie['movieID']; ?>">
-                        <?php //echo $movie['title']; ?>-->
+                    <a href="?movie_id=<?php echo $movie['movieID']; ?>">
+                        <?php echo $movie['title']; ?>
                     </a>
                 </li>
-                <?php// endforeach; ?>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </aside>
     <section>
         <h1>Movie Details</h1>
-        <!-- <?php //if (isset($movie)) : ?>
+        <?php //if (isset($movie)) : ?>
         <div id="movie_details">
             <h2><?php// echo $movie['title']; ?></h2>
             <p><strong>Release Year:</strong>
@@ -36,7 +36,7 @@
         </div>
         <?php //else: ?>
         <p>Select a movie to view its details.</p>
-        <?php// endif; ?>-->
+        <?php// endif; ?>
     </section>
 </main>
 
