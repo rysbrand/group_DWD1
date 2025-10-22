@@ -4,7 +4,7 @@
 function get_movies_by_genre($genre_id) {
     global $db;
     $query = 'SELECT * FROM movies
-              WHERE movies.genreID = :genre_id
+              WHERE movies.genre_ID = :genre_id
               ORDER BY movie_ID';
     $statement = $db->prepare($query);
     $statement->bindValue(":genre_id", $genre_id);
@@ -24,6 +24,25 @@ function get_movie($movie_id) {
     $movie = $statement->fetch();
     $statement->closeCursor();
     return $movie;
+}
+
+function get_movies(): array {
+    global $db;
+    $query = '
+        SELECT 
+            m.movie_ID,
+            m.Title,
+            m.release_Year,
+            m.Price,
+            g.Name AS Genre,
+            m.Description
+        FROM movies m
+        JOIN genre g ON m.genre_ID = g.genre_ID
+        ORDER BY m.Title
+    ';
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function delete_movie($movie_id) {
