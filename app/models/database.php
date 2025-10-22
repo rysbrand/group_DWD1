@@ -1,5 +1,5 @@
 <?php
-    //database is not actually created yet
+    
     $dsn = 'mysql:host=localhost;dbname=dwd_unit2_database';
     $username = 'root';
     $password = '';

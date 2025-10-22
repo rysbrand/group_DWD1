@@ -19,7 +19,7 @@ include $ROOT . '/views/header.php';
 
 switch ($route) {
   case 'list':
-    include $ROOT . '/movie_catalog/movie_list.php';
+    include $ROOT . '/movie_catalog/movie_view.php';
     break;
 
   case 'cart':
@@ -28,7 +28,7 @@ switch ($route) {
 
   case 'home':
   default:
-    include $ROOT . '/movie_catalog/movie_view.php'; // ← home page
+    include $ROOT . '/Home/index.php'; // ← home page
     break;
     
 }

@@ -1,4 +1,7 @@
+<?php
+$movies = get_movies();
 
+?>
 <main>
     <aside>
         <h1>Movie List</h1>
@@ -39,4 +42,3 @@
         <?php// endif; ?>
     </section>
 </main>
-
