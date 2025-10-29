@@ -1,7 +1,8 @@
 <?php
 namespace yourlastname\cart;
-require_once('../models/database.php');
-require_once('../models/movies_db.php');
+ require_once('../models/database.php');
+ require_once('../models/movies_db.php');
+
 // Add an item to the cart
 function add_item(&$cart, $key, $quantity) {
     global $movies;

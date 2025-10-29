@@ -1,6 +1,5 @@
 <?php
 // index.php (root)
-declare(strict_types=1);
 
 $ROOT = __DIR__;
 
@@ -34,7 +33,7 @@ switch ($route) {
     break;
 
   case 'cart':
-    include $ROOT . '/cart/cart_view.php';
+    include $ROOT . '/cart/cart_view.php'; //C:\wamp64\www\Unit 2 Group Project\app\cart\cart_view.php
     break;
 
   case 'home':

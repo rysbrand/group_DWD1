@@ -12,6 +12,7 @@
         </h1>
         <p><p><a href="movie_manager/">Movie Manager</a></p></p>
         <p><a href="genre_manager/">Genre Manager</a></p>
+        <!--<p><a href=".?r=cart">View Cart</a></p>   tester -->
     </main>
 </body>
 </html>

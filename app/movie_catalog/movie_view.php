@@ -5,6 +5,7 @@ if (!isset($movies)) {
 }
 
 ?>
+
 <main>
     <aside>
         <h1>Movie List</h1>
@@ -14,6 +15,7 @@ if (!isset($movies)) {
                 <?php foreach ($movies as $m) : ?>
                 <li>
                     <a href="?r=view_movie&amp;movie_id=<?php echo $m['movie_ID']; ?>">
+
                         <?php echo $m['Title']; ?>
                     </a>
                 </li>

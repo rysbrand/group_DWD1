@@ -57,7 +57,6 @@
             <?php endforeach; ?>
         </table>
         <p><a href="?action=show_add_form">Add Movie</a></p>
-        <!-- <p class="last_paragraph"><a href="?action=list_categories">List Categories</a></p>         -->
     </section>
 </main>
 <?php include '../views/footer.php'; ?>

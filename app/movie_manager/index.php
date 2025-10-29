@@ -11,6 +11,8 @@ if ($action == NULL) {
     }
 }
 
+
+
 if ($action == 'list_movies') {
     $genre_ID = filter_input(INPUT_GET, 'genre_ID', 
             FILTER_VALIDATE_INT);

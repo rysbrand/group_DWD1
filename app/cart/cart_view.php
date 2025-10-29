@@ -1,4 +1,4 @@
-<?php include '../views/header.php'; ?>
+
     <?php
     $cart = 'cartDWD';
     ?>
@@ -42,5 +42,4 @@
         <p><a href=".?action=show_add_item">Add Item</a></p>
         <p><a href=".?action=empty_cart">Empty Cart</a></p>
     </main>
-    <?php require_once ('../views/footer.php')
-    ?>
+
