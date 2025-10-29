@@ -14,6 +14,17 @@ function get_movies_by_genre($genre_id) {
     return $movies;
 }
 
+function get_movies() {
+    global $db;
+    $query = 'SELECT * FROM movies
+            ORDER BY movie_ID';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $movies = $statement->fetchAll();
+    $statement->closeCursor();
+    return $movies;
+}
+
 function get_movie($movie_id) {
     global $db;
     $query = 'SELECT * FROM movies

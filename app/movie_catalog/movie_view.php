@@ -1,5 +1,8 @@
 <?php
-$movies = get_movies();
+
+if (!isset($movies)) {
+    $movies = get_movies();
+}
 
 ?>
 <main>
@@ -7,38 +10,40 @@ $movies = get_movies();
         <h1>Movie List</h1>
         <nav>
             <ul>
-                <?php foreach ($movies as $movie) : ?>
+                <?php if (isset($movies) && is_array($movies)) : ?>
+                <?php foreach ($movies as $m) : ?>
                 <li>
-                    <a href="?movie_id=<?php echo $movie['movieID']; ?>">
-                        <?php echo $movie['title']; ?>
+                    <a href="?r=view_movie&amp;movie_id=<?php echo $m['movie_ID']; ?>">
+                        <?php echo $m['Title']; ?>
                     </a>
                 </li>
                 <?php endforeach; ?>
+                <?php endif; ?>
             </ul>
         </nav>
     </aside>
+    <?php if (isset($movie)) : ?>
     <section>
         <h1>Movie Details</h1>
-        <?php //if (isset($movie)) : ?>
         <div id="movie_details">
-            <h2><?php// echo $movie['title']; ?></h2>
+            <h2><?php echo $movie['Title']; ?></h2>
             <p><strong>Release Year:</strong>
-                <?php// echo $movie['releaseYear']; ?></p>
+                <?php echo $movie['release_Year']; ?></p>
             <p><strong>Genre:</strong>
-                <?php// echo $movie['genre_ID']; ?></p>
+                <?php echo $movie['genre_ID']; ?></p>
             <p><strong>Description:</strong>
-                <?php// echo $movie['description']; ?></p>
-            <form action="../cart" method="post">
+                <?php echo $movie['Description']; ?></p>
+            <form action="../app/cart/index.php" method="post">
                 <input type="hidden" name="action" value="add">
-                <input type="hidden" name="movie_id"
-                       value="<?php// echo $movie['movieID']; ?>">
+                <input type="hidden" name="productkey"
+                       value="<?php echo $movie['movie_ID']; ?>">
                 <label>Quantity:</label>
-                <input type="text" name="quantity" value="1">
+                <input type="text" name="itemqty" value="1">
                 <input type="submit" value="Add to Cart">
             </form>
         </div>
-        <?php //else: ?>
+        <?php else: ?>
         <p>Select a movie to view its details.</p>
-        <?php// endif; ?>
+        <?php endif; ?>
     </section>
 </main>
