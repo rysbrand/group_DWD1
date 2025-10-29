@@ -25,6 +25,19 @@ function get_genre($genre_id) {
     return $genre;
 }
 
+function get_genre_name($genre_id) {
+    global $db;
+    $query = 'SELECT * FROM genre
+              WHERE genre_ID = :genre_id';    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':genre_id', $genre_id);
+    $statement->execute();    
+    $genre = $statement->fetch();
+    $statement->closeCursor();    
+    $genre_name = $genre['Name'];
+    return $genre_name;
+}
+
 function add_genre($name, $description) {
     global $db;
     $query = 'INSERT INTO genre

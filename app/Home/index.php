@@ -10,6 +10,8 @@
         <h1 style="text-align:center; margin-top: 80px;">
             Welcome to DWD1 Movies Web Project
         </h1>
+        <p><p><a href="movie_manager/">Movie Manager</a></p></p>
+        <p><a href="genre_manager/">Genre Manager</a></p>
     </main>
 </body>
 </html>
