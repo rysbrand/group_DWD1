@@ -10,7 +10,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 if ($action == NULL) {
-    $action = filter_input(INPUT_GET, 'r'); // <-- Add this line
+    $action = filter_input(INPUT_GET, 'r'); 
 }
 
 if ($action == NULL) {
