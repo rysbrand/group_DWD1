@@ -1,20 +1,16 @@
+
 <?php
-
-if (!isset($movies)) {
     $movies = get_movies();
-}
-
 ?>
-
 <main>
     <aside>
         <h1>Movie List</h1>
         <nav>
             <ul>
-                <?php if (isset($movies) && is_array($movies)) : ?>
+                <?php if (is_array($movies)) : ?>
                 <?php foreach ($movies as $m) : ?>
                 <li>
-                    <a href="?r=view_movie&amp;movie_id=<?php echo $m['movie_ID']; ?>">
+                    <a href="?action=view_movie&amp;movie_id=<?php echo $m['movie_ID']; ?>">
 
                         <?php echo $m['Title']; ?>
                     </a>
@@ -35,7 +31,7 @@ if (!isset($movies)) {
                 <?php echo $movie['genre_ID']; ?></p>
             <p><strong>Description:</strong>
                 <?php echo $movie['Description']; ?></p>
-            <form action="../app/cart/index.php" method="post">
+            <form action="../cart/index.php" method="post">
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="productkey"
                        value="<?php echo $movie['movie_ID']; ?>">

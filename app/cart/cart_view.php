@@ -39,7 +39,6 @@
                 </p>
             </form>
         <?php endif; ?>
-        <p><a href=".?action=show_add_item">Add Item</a></p>
+        <p><a href="../movie_catalog/">Add Item</a></p>
         <p><a href=".?action=empty_cart">Empty Cart</a></p>
     </main>
-

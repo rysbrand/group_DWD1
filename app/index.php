@@ -40,17 +40,6 @@ switch ($route) {
   default:
     include $ROOT . '/Home/index.php'; // ← home page
     break;
-  
-  case 'view_movie':
-    $movie_id = filter_input(INPUT_GET, 'movie_id', FILTER_VALIDATE_INT);
-    if ($movie_id) {
-        $movie = get_movie($movie_id);
-        $movies = get_movies(); // Optional
-        include $ROOT . '/movie_catalog/movie_view.php';
-    } else {
-        echo "<p>Invalid movie ID.</p>";
-    }
-    break;
     
 }
 
